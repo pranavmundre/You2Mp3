@@ -1,0 +1,228 @@
+{% load static %}
+{% load social_share %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <style type="text/css">
+  .gly-spin {
+  -webkit-animation: spin 2s infinite linear;
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+}
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(359deg);
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+  }
+}
+@-o-keyframes spin {
+  0% {
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    -o-transform: rotate(359deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+  </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <title>You2Mp3 Converter</title>
+
+  </head>
+
+  <body>
+  
+
+<!--NAV BAR -->
+
+<!--
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">You2Mp3 Converter</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="col-sm-3 col-md-3 pull-right">
+            <form class="navbar-form" role="search" action ="{%url 'search:search'%}" method="POST">
+                {% csrf_token %}
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" name="q" id="v_id" autocomplete="off">
+                    <div class="input-group-btn">
+                        <button class="btn btn-success" type="submit" id="myBtn"><i class="glyphicon glyphicon-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>        
+    </div>
+</nav>
+-->
+
+<!-- ENDS HERE -->
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-8   col-md-offset-2">
+                    <div class="input-group">
+                        <input type="text" class="form-control input-lg" placeholder="Search" name="q" id="v_id" autocomplete="off">
+                        <div class="input-group-btn">
+                            <button class="btn btn-success btn-lg" id="clk"><i class="glyphicon glyphicon-download" id="downloader"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-3">
+                    {% post_to_facebook object_or_url "Post to Facebook!" %}
+                </div>
+
+                <div class="col-md-3">
+                    {% post_to_twitter object_or_url "Post to Twitter" %}
+                </div>
+
+                <div class="col-md-3">
+                    {% post_to_reddit object_or_url "Post to reddit" %}
+                </div>
+
+                <div class="col-md-3">
+                    {% post_to_whatsapp object_or_url "Share via WhatsApp" %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+-->
+
+<!-- CLEAR FIX EXXAMPLE -->
+
+<!-- <div class="clearfix hidden-lg hidden-sm"-->
+<!--best site-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+
+function onFocus(){
+	paste();
+};
+window.onfocus = onFocus;
+</script>
+
+<script type="text/javascript">
+
+async function paste() {
+  const text = await navigator.clipboard.readText();
+  $( "#v_id" ).val(text);
+}
+
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie != '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+var csrftoken = getCookie('csrftoken');
+function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+$.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        }
+    }
+}); 
+$('#clk').click(function(){
+
+    var q=$("#v_id").val();
+    
+    $('#downloader').removeClass("glyphicon-download");
+    $('#downloader').addClass("glyphicon-refresh");
+    $('#downloader').addClass("gly-spin");
+
+    $.ajax({
+        type: 'POST',
+        data:{"query":q},
+        url:'/search/search/',
+        dataType: "json",
+        success: function(result) {        
+           // https://www.youtube.com/watch?v=iHibnmosKkM
+             
+             $('#downloader').removeClass("glyphicon-refresh");
+             $('#downloader').removeClass("gly-spin");
+             $('#downloader').addClass("glyphicon-download");
+
+             
+             window.location='download/'+result.url_link;
+        }
+    });
+
+});
+
+
+
+
+    
+
+</script>
+
+
+  </body>
+</html>
