@@ -1,0 +1,16 @@
+{
+  "name": "You2MP3",
+  "short_name": "You2MP3",
+  "description": "You2MP3",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#fff",
+  "icons": [
+    {
+      "src": "https://p7.hiclipart.com/preview/956/757/193/symbol-red-font-mp3.jpg",
+      "type": "image/png",
+      "sizes": "160x160"
+    }
+
+}

@@ -23,7 +23,10 @@ def search(request):
     'max-downloads':1,
     }
     ydl = youtube_dl.YoutubeDL(ydl_opts)
-    title=(ydl.extract_info(query,download=False))['title']
+    try:
+        title=(ydl.extract_info(query,download=False))['title']
+    except youtbe_dl.utils.ExtractorError:
+        return JsonResponse({"INVALID":"This mp3 is not available for download by you tube"},safe=False)
     title=re.sub('[\W_]+', '', str(title))+".mp3"
     try:
         ydl.download([query])

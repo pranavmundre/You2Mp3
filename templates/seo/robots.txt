@@ -1,3 +1,3 @@
 User-agent: *
 Disallow: /search/search
-Sitemap: https://www.you2mp3.online/static/sitemap/sitemap.xml
+Sitemap: https://www.you2mp3.online/sitemap.xml

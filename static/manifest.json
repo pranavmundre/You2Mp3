@@ -1,0 +1,10 @@
+{
+  "name": "You2MP3",
+  "short_name": "You2MP3",
+  "start_url": "/",
+  "display": "any",
+  "scope": "/",
+  "manifest_version": 2,
+  "background_color": "#fff",
+  "theme_color": "#fff",
+}

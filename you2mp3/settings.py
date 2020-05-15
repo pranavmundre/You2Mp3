@@ -24,19 +24,21 @@ STATIC_DIR = os.path.join(BASE_DIR,"/home/you2mp3/you2mp3/static")
 MEDIA_URL = '/home/you2mp3/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR,'/home/you2mp3/media')
 
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'j_(ozdyi8wflonjxmsa6jfg_2pg!xxq1hy98x@h5759^6jferh'
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 
-ALLOWED_HOSTS = ['www.you2mp3.online']
+ALLOWED_HOSTS = ['www.you2mp3.online','.you2mp3.online']
 
 # Application definition
 
@@ -49,7 +51,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'search',
     'django_social_share',
-
+    'blog',
+    'tinymce',
+    'django.contrib.sites',
 ]
 
 MIDDLEWARE = [
@@ -135,3 +139,4 @@ STATIC_URL = '/static/'
 #STATICFILES_DIRS = [
     #STATIC_DIR,
 #]
+
